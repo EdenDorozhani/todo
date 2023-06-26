@@ -1,0 +1,29 @@
+.dropdown-btn {
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+.dropdown-btn:hover {
+  color: var(--mid-dark);
+  cursor: pointer;
+}
+
+.dropdown-options {
+  gap: 10px;
+  background-color: var(--darker);
+  /* display: none; */
+}
+
+.dropdown-options div {
+  text-align: center;
+  width: 100%;
+  color: white;
+  text-shadow: 0px 0px 9px white;
+  border-top: 1px solid var(--high-mid-dark);
+  padding: 10px 0px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.dropdown-options div:hover {
+  background-color: var(--mid-dark);
+  cursor: pointer;
+}

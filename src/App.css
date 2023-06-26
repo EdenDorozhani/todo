@@ -1,0 +1,44 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  user-select: none;
+}
+
+:root {
+  --darker: #2d0081;
+  --high-mid-dark: rgb(76, 0, 255);
+  --mid-dark: #3d6beb;
+  --low-mid-dark: #91b1ff;
+  --lighter: #b8d5ff;
+}
+
+body {
+  background: linear-gradient(
+    to right bottom,
+    rgb(70, 0, 128) 25%,
+    rgb(76, 0, 255) 69%
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.todo-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.wraper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  gap: 100px;
+}
