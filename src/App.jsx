@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import FilterTodo from "./components/TodoController/FilterTodo.jsx";
 import "./App.css";
 import InputController from "./components/TodoController/InputController.jsx";
 import Title from "./components/Title/Title";
@@ -7,7 +7,7 @@ import ListController from "./components/ListController/ListController";
 
 function App() {
   const [todoGoals, setTodoGoals] = useState([]);
-
+  const [value, setValue] = useState("All");
   const addTodoHandler = (value) => {
     setTodoGoals((prevGoals) => {
       const updatedGoals = [...prevGoals];
@@ -29,30 +29,26 @@ function App() {
     });
   };
 
-  const getFilterValue = (filterValue) => {
-    console.log(filterValue);
-
-    if (filterValue === "Completed") {
-      const filteredGoals = todoGoals.filter((todoGoal) => {
-        return todoGoal.done === true;
-      });
-      setTodoGoals(filteredGoals);
-    } else if (filterValue === "Uncompleted") {
-      const filteredGoals = todoGoals.filter((todoGoal) => {
-        return todoGoal.done === false;
-      });
-      setTodoGoals(filteredGoals);
-    } else {
-      setTodoGoals(todoGoals);
-    }
+  const getFilterValue = (headerValue) => {
+    setValue(headerValue);
   };
 
   return (
     <div className="wraper">
       <Title />
       <div className="todo-app">
-        <InputController filterTodo={getFilterValue} addTodo={addTodoHandler} />
-        <ListController todoGoals={todoGoals} deleteTodo={deleteTodoHandler} />
+        <div className="todo-action">
+          <InputController
+            filterTodo={getFilterValue}
+            addTodo={addTodoHandler}
+          />
+          <FilterTodo value={value} getValue={getFilterValue} />
+        </div>
+        <ListController
+          value={value}
+          todoGoals={todoGoals}
+          deleteTodo={deleteTodoHandler}
+        />
       </div>
     </div>
   );

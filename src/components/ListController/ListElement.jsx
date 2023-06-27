@@ -11,17 +11,18 @@ const ListElement = (props) => {
   };
 
   const activeClassToggler = () => {
-    !isActive && setIsActive(true);
-    isActive && setIsActive(false);
+    setIsActive(!isActive);
     props.todoGoal.done = isActive;
 
     console.log(props.todoGoal);
   };
 
   return (
-    <div className={!isActive ? "list-content active" : "list-content"}>
+    <div
+      className={props.todoGoal.done ? "list-content active" : "list-content"}
+    >
       <FontAwesomeIcon
-        className={!isActive ? "check-mark active" : "check-mark"}
+        className={props.todoGoal.done ? "check-mark active" : "check-mark"}
         icon={faCheck}
       />
       <div className="todo-content">

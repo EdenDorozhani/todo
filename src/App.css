@@ -42,3 +42,9 @@ body::-webkit-scrollbar {
   margin-top: 100px;
   gap: 100px;
 }
+
+.todo-action {
+  display: flex;
+  gap: 16px;
+  position: relative;
+}

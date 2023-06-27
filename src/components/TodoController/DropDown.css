@@ -10,7 +10,7 @@
 .dropdown-options {
   gap: 10px;
   background-color: var(--darker);
-  /* display: none; */
+  display: none;
 }
 
 .dropdown-options div {
@@ -19,11 +19,15 @@
   color: white;
   text-shadow: 0px 0px 9px white;
   border-top: 1px solid var(--high-mid-dark);
-  padding: 10px 0px;
+  padding: 11px 0px;
   font-size: 14px;
   transition: all 0.3s ease;
 }
 .dropdown-options div:hover {
   background-color: var(--mid-dark);
   cursor: pointer;
+}
+
+.drop {
+  display: block;
 }

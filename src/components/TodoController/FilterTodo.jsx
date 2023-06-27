@@ -2,14 +2,14 @@ import React from "react";
 import "./FilterTodo.css";
 import FilterHeader from "./FilterHeader";
 
-const FilterTodo = ({ getValue }) => {
-  const getFilterValue = (Headervalue) => {
-    getValue(Headervalue);
+const FilterTodo = ({ getValue, value }) => {
+  const getFilterValue = (headerValue) => {
+    getValue(headerValue);
   };
 
   return (
     <div className="filter-todo">
-      <FilterHeader getFilterValue={getFilterValue} />
+      <FilterHeader value={value} getFilterValue={getFilterValue} />
     </div>
   );
 };
